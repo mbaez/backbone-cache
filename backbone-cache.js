@@ -194,7 +194,8 @@ Backbone.Storage = {
             params.options = options;
             //se cachean los datos
             if (target.cache != false) {
-                Backbone.Storage.set(target.url(), params);
+                var urlKey = typeof target.url == "string" ? target.url : target.url();
+                Backbone.Storage.set(urlKey, params);
             }
             if (Backbone.Storage.trigger) {
                 target.trigger('ready', params);
@@ -240,7 +241,7 @@ Backbone.Storage = {
             var super_fetch = clazz.prototype.fetch;
             // Override the fetch method to emit a fetch event.
             clazz.prototype.fetch = function () {
-                var key = this.url();
+                var key = typeof this.url == "string" ? this.url : this.url();
                 this.requestType = 'fetch';
                 // Trigger the fetch event on the instance.
                 this.trigger("fetch", this);
