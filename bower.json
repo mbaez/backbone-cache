@@ -1,0 +1,18 @@
+{
+    "name": "backbone-cache",
+    "version": "0.0.0",
+    "authors": ["Maximiliano Báez González <maximiliano.baez@konecta.com.py>"],
+    "description": "Mecanismo de cacheo de de los datos obtenidos con los models y collections de backbonejs",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+      ],
+    "dependencies": {
+        "jquery": "*",
+        "underscore": "*",
+        "backbone": "*"
+    }
+}
